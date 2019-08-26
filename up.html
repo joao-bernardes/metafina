@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<title>Metafina Shrine</title>
+	</head>
+	<body style="background-color: grey">
+		<h1 class="section1"> UPLOAD </h1>
+		<div class="scrollmenu">
+		<a href=".">HOME</a>
+		</div>
+		<hr>
+		<h4>Fazer upload de músicas:</h4></section>
+		<form action="./action.php" method="post" enctype="multipart/form-data">
+		   	<input type="file" name="myfile">  
+		   	<br>
+			<br>Nome da Faixa:
+			<input type="text" name="nome" value="Nome">
+			<br>Data:
+			<input type="date" name="data" value="">
+			<br>Duração:
+			<input type="time" name="duração" value="">
+			<br>Observações:<br>
+			<input class="textarea" type="text" name="observações" value="exemplo: Quem toca qual instrumento? Quantas partes tem a faixa? ...">
+			<input type="submit" name="submit">
+		</form>
+	</body>
+</html>
+

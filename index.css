@@ -1,3 +1,29 @@
+@font-face{
+  font-family: Arial;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Arial;
+  
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: grey;
+}
+
+
 .textarea{
   width: 500px;
   height: 150px;
@@ -5,9 +31,10 @@
 
 
 .section1{
+font-family: Arial;
 width:100%;
-height:auto;
 min-height:100px;
+padding-top: 30px;
   text-align: center;
   font-size: 3em;
 background-image: url(https://moviewriternyu.files.wordpress.com/2014/01/fire-breathing-dragon.jpg);
