@@ -1,16 +1,28 @@
 <html>
 <body>
 
-Nome da faixa: <?php echo $_POST["nome"]; ?><br>
-Data: <?php echo $_POST["data"]; ?><br>
-Duração: <?php echo $_POST["duração"]; ?><br>
-Comentario: <?php echo $_POST["observações"]; ?><br>
-
+<section>
+    <table>
+        <tr>
+            <th>Nome da faixa:</th>
+            <th>Data:</th>
+            <th>Duração:</th>
+            <th>Comentario:</th> 
+        </tr>
+        <tr>
+            <td><?php echo $_POST["nome"]; ?></td>
+            <td><?php echo $_POST["data"]; ?></td>
+            <td><?php echo $_POST["duração"]; ?></td>
+            <td><?php echo $_POST["observações"]; ?></td>
+        </tr>
+    </table>
+<hr>
+</section>
 
 
 <?php
     $currentDir = getcwd();
-    $uploadDirectory = "./media/";
+    $uploadDirectory = "/media/";
 
     $errors = []; // Store all foreseen and unforseen errors here
 
@@ -39,6 +51,13 @@ Comentario: <?php echo $_POST["observações"]; ?><br>
 
             if ($didUpload) {
                 echo "The file " . basename($fileName) . " has been uploaded";
+                echo "The file " . basename($fileName, '.mp3') . " has been uploaded";  
+                fopen(basename($fileName, '.mp3') .".csv","w");
+                file_put_contents("./media/" . basename($fileName, '.mp3') .".csv", 
+                        $_POST["nome"] . "," . $_POST["data"] . "," . $_POST["duração"] . "," . $_POST["observações"]);
+                } else {
+                    echo "An error occurred somewhere. Try again or contact the admin";
+                } 
             } else {
                 echo "An error occurred somewhere. Try again or contact the admin";
             }
@@ -47,7 +66,7 @@ Comentario: <?php echo $_POST["observações"]; ?><br>
                 echo $error . "These are the errors" . "\n";
             }
         }
-    }
+    
 
 
 ?>
